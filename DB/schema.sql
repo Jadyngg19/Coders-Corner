@@ -1,0 +1,5 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS coders_corner_db;
+
+-- CREATE DATABASE
+CREATE DATABASE coders_corner_db;
