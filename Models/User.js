@@ -1,6 +1,7 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../Config/Connection');
 const bycrypt = require('bcrypt');
+const { beforeUpdate } = require('./Comment');
 
 // Creating the User model and defining the columns and configurations for the table
 class User extends Model {
@@ -21,10 +22,44 @@ User.init(
             type: DataTypes.STRING,
             allowNull: true
         },
+        github: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         email: {
-            type: {
-                
+            typr: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [4]
             }
         }
+    },
+
+    {
+        hooks: {
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            }
+        },
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'user'
     }
-)
+);
+
+module.exports = User;
