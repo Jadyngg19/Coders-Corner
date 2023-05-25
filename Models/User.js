@@ -23,7 +23,7 @@ User.init(
         },
         email: {
             type: {
-
+                
             }
         }
     }
