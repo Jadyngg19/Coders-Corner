@@ -27,13 +27,11 @@ User.init(
             allowNull: false
         },
         email: {
-            typr: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
-        },
+            type: DataTypes.STRING, // Use the STRING data type for email attribute
+            allowNull: false, // Set allowNull to false if email is required
+            unique: true, // Add unique constraint if email should be unique
+            // Add other validations if necessary, such as validate: { isEmail: true }
+          },
         password: {
             type: DataTypes.STRING,
             allowNull: false,

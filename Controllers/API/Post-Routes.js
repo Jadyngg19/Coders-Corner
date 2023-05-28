@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment } = require('../../Models');
 const sequelize = require('../../Config/Connection');
 const withAuth = require('../../Utils/Authorization');
 
@@ -119,7 +119,7 @@ router.put('/:id', withAuth, (req, res) => {
     })
       .then(dbPostData => {
         if (!dbPostData) {
-          res.status(404).json({ message: 'No pos was found with this id' });
+          res.status(404).json({ message: 'No post was found with this id' });
           return;
         }
         res.json(dbPostData);
