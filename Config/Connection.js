@@ -1,21 +1,19 @@
-// Import the Sequelize constructor from the library
 const Sequelize = require('sequelize');
-
 require('dotenv').config();
 
-// Create connection to our database
-let sequelize;
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  protocol: 'postgres',
+  logging: false,
+});
 
-if (process.env.JAWSDB_URL) {
-  // If the JAWSDB_URL environment variable exists (indicating the Heroku MySQL add-on)
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  // If running locally or on a different environment
-  sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST || 'localhost',
-    dialect: 'mysql',
-    port: process.env.DB_PORT || 3306
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connected to the database successfully.');
+  })
+  .catch((error) => {
+    console.error('Unable to connect to the database:', error);
   });
-}
 
-module.exports = sequelize;
+module.exports = sequelize; 
