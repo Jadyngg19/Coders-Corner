@@ -2,12 +2,16 @@
     box-sizing: border-box;
   }
   
-  body, html {
+  body {
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+    color: black; 
+  }
+
+  html {
+    background-color: #92efff79 !important; 
   }
   
   a {
@@ -17,7 +21,8 @@
   }
   
   a:hover {
-    color: #c273ff;
+    color: #c273ff !important; 
+    background-color: transparent !important; 
   }
   
   button {
@@ -37,12 +42,12 @@
   textarea, input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ff72f6;
+    border: 1px solid #c273ff !important; 
   }
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #ff72f6;
+    border: 1px solid #c273ff !important;
   }
   
   textarea {
@@ -68,11 +73,15 @@
   }
   
   header {
-    border-bottom: 1px solid #d07eff;
+    border-bottom: 1px solid #c273ff !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+  } 
+
+  footer {
+    background-color: transparent !important;
   }
   
   main {
@@ -86,7 +95,7 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
+    color: #c273ff !important;
     font-size: 100%;
     font-weight: bold;
     transition: color .1s;
@@ -95,15 +104,15 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #eb34c3;
+    color: #eb34c3 !important;
   }
   
   .delete-post-btn {
-    background-color: #fc1111;
+    background-color: #fc1111 !important;
   }
   
   .delete-post-btn:hover {
-    background-color: #ff6a6a;
+    background-color: #ff6a6a !important;
   }
   
   .post {
@@ -114,7 +123,7 @@
   .post .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
+    color: #c273ff !important;
   }
   
   .edit-link {
@@ -129,10 +138,7 @@
   .comment {
     padding: 1%;
     margin-bottom: 1%;
-  }
-  
-  .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #79e9ff3a !important; 
   }
   
   .comment .meta {
@@ -146,7 +152,7 @@
   }
   
   footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #c273ff !important;
     display: flex;
     justify-content: center;
     padding: 1%;
@@ -161,4 +167,26 @@
   .rows{
       display:flex;
       flex-direction: column;
+  }
+
+  .navbar-item:hover {
+    color: #c273ff !important; 
+  } 
+
+  .card-header {
+    background-color: #c273ff !important; 
+  }
+
+  .the-title {
+    color: #eb34c3 !important; 
+    font-size: 20px;
+  } 
+
+  .navbar {
+    background-color: transparent !important; 
+  } 
+
+  hr {
+    color: transparent !important; 
+    background-color: transparent !important; 
   }
