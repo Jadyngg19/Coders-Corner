@@ -1,5 +1,5 @@
 {
-  "name": "Coder's Corner",
+  "name": "cc",
   "version": "1.0.0",
   "description": "Model-View-Controller (MVC) Tech Blog",
   "main": "server.js",
