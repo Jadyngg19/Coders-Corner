@@ -3,16 +3,18 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
-// Create connection to our database, pass in your MySQL information for username and password
+// Create connection to our database
 let sequelize;
 
 if (process.env.JAWSDB_URL) {
+  // If the JAWSDB_URL environment variable exists (indicating the Heroku MySQL add-on)
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
+  // If running locally or on a different environment
   sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: 'localhost',
+    host: process.env.DB_HOST || 'localhost',
     dialect: 'mysql',
-    port: 3306
+    port: process.env.DB_PORT || 3306
   });
 }
 
