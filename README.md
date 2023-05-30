@@ -35,6 +35,16 @@ Once the application is running, you can access it by opening your web browser a
 
 Make sure to sign up or sign in to access all the features and perform actions like creating, updating, and deleting blog posts. You can also leave comments on existing blog posts.
 
+![Homepage](./Images/Homepage.png)
+![Login Page](./Images/Login%20Screen.png)
+![Signup Page](./Images/SignUp%20Page.png)
+![Dashboard](./Images/Dashboard.png)
+![Adding Post](./Images/Creating%20a%20New%20Post.png)
+![New Post Added](./Images/New%20Post%20Added.png)
+![Post w/Comments](./Images/Post%20w%3AComments.png)
+![Editing Post Option](./Images/Edit%3ADelete%20Post%20Options.png)
+
+
 ## Features
 
 This site offers the following features:
