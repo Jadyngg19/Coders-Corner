@@ -17,7 +17,7 @@
   }
   
   a:hover {
-    color: #3486eb;
+    color: #c273ff;
   }
   
   button {
@@ -42,7 +42,7 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid #ff72f6;
   }
   
   textarea {
@@ -95,15 +95,15 @@
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: #eb34c3;
   }
   
   .delete-post-btn {
-    background-color: #d41414;
+    background-color: #fc1111;
   }
   
   .delete-post-btn:hover {
-    background-color: #ff643d;
+    background-color: #ff6a6a;
   }
   
   .post {
