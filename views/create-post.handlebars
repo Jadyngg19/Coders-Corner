@@ -9,10 +9,19 @@
     </div>
     <div>
       <label for="post-content">Content:</label>
-      <input class="textarea is-large" id="post-content" name="post-content" placeholder="Insert blog content here"/>
+      <input class="textarea is-large has-fixed-size custom-textarea" rows="4" wrap="soft" id="post-content" name="post-content" placeholder="Insert blog content here"/>
     </div>
     <button type="submit" class="button is-primary is-pulled-right">Create Post</button>
   </form>
 </section>
+<script>
+    $(document).ready(function() {
+      // Automatically adjust textarea height on input
+      $('textarea.custom-textarea').on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+      });
+    });
+  </script>
 
 <script src="/JavaScript/add-post.js"></script>
