@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const sequelize = require('../Config/Connection');
-const { Post, User, Comment } = require('../Models');
-const withAuth = require('../Utils/Authorization');
+const sequelize = require('../config/connection');
+const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
@@ -21,12 +21,12 @@ router.get('/', withAuth, (req, res) => {
           attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['username', 'github']
+            attributes: ['username', 'twitter', 'github']
           }
         },
         {
           model: User,
-          attributes: ['username', 'github']
+          attributes: ['username', 'twitter', 'github']
         }
       ]
     })
@@ -58,12 +58,12 @@ router.get('/', withAuth, (req, res) => {
           attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['username', 'github']
+            attributes: ['username', 'twitter', 'github']
           }
         },
         {
           model: User,
-          attributes: ['username', 'github']
+          attributes: ['username', 'twitter', 'github']
         }
       ]
     })
@@ -105,12 +105,12 @@ router.get('/create/', withAuth, (req, res) => {
           attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
-            attributes: ['username', 'github']
+            attributes: ['username', 'twitter', 'github']
           }
         },
         {
           model: User,
-          attributes: ['username', 'github']
+          attributes: ['username', 'twitter', 'github']
         }
       ]
     })
