@@ -1,19 +1,18 @@
 const Sequelize = require('sequelize');
+
 require('dotenv').config();
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialect: 'postgres',
-  protocol: 'postgres',
-  logging: false,
-});
+// Create connection to our database, pass in your MySQL information for username and password
+let sequelize;
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connected to the database successfully.');
-  })
-  .catch((error) => {
-    console.error('Unable to connect to the database:', error);
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: 'localhost',
+    dialect: 'mysql',
+    port: 3306
   });
+}
 
-module.exports = sequelize; 
+module.exports = sequelize;
